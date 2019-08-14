@@ -1,0 +1,73 @@
+<html>
+<title>Translate AUS in product descriptions to US</title>
+
+<style type="text/css">
+
+	thead td{
+		color:purple;
+		font-size: 26px;
+		font-weight: 700;
+		padding-top:25px;
+		padding-bottom:10px;
+	}
+	td{
+		border-bottom: 1px solid black;
+
+	}
+	tr td *:last-child{
+		margin-bottom:30px;
+	}
+
+</style>
+
+<body>
+
+<table id="data-container">
+	<thead>
+		<td>Before transform</td>
+
+		<td>After transform</td>
+
+	</thead>
+
+</table>
+</body>
+
+
+
+<script src="./spelling-differences.js"></script>
+<script src="./translate-british-english.js"></script>
+
+<script>
+
+
+var descriptionsToTranslate = [
+	'<h1>I do say!</h1> <p>The sky has a beautiful colour this morning, chap! I fancy a cup of tea - 2 l should do. I could stand to lose 5 kg, perhaps from walking 200 m or so per day. I realise that is a bit specific, perhaps you could credit me on my organisational skills!'
+
+
+
+];
+
+
+//Call translate function side by side to descriptionsToTranlate text
+
+
+for(var i = 0; i< descriptionsToTranslate.length; i++){
+
+	//create a 'before' col
+	var beforeCol = document.createElement('td');
+		beforeCol.innerHTML = descriptionsToTranslate[i];
+
+	//create a 'before' col
+	var afterCol = document.createElement('td');
+		afterCol.innerHTML = translateBritishEnglish(descriptionsToTranslate[i], true);
+
+	//create a new table row
+	var newRow = document.createElement('tr');
+		newRow.innerHTML = beforeCol.outerHTML + afterCol.outerHTML;
+
+	//put the new row into the dom
+		document.getElementById('data-container').appendChild(newRow);
+}
+
+	</script>
