@@ -28,7 +28,7 @@ SOFTWARE.
 //Do it like this:
 /*
 var exampleString = 'This product has a beautiful colour, any organisation could benefit from 15m of it. it carries 980ml of water, and weighs 15kg.';
-translateAUStoUS(exampleString);
+translateBritishEnglish(exampleString);
 */
 
 
